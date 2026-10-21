@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *, ::before, ::after {
   padding: 0;
   margin: 0;
@@ -29,14 +30,18 @@ img {
 .cards {
   list-style: none;
   margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  padding: 1.75rem;
+  padding: 2rem;
   border-radius: 12px;
+  box-shadow: 30px 40px 25px hsl(0, 0%, 81%);
 }
 .card__header {
   display: flex;
@@ -45,6 +50,35 @@ img {
 }
 .card__avatar {
   border-radius: 100%;
+}
+.card__text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.card__name {
+  font-weight: 500;
+}
+.card__status {
+  font-weight: 300;
+  font-size: 0.7rem;
+}
+.card__title {
+  font-weight: 500;
+  text-align: left;
+  font-size: 1.4rem;
+}
+.card__quote {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-weight: 300;
+  text-align: left;
+}
+.card__quote::before {
+  content: "“ ";
+}
+.card__quote::after {
+  content: " ”";
 }
 
 li:nth-child(1) .card {
@@ -57,7 +91,7 @@ li:nth-child(2) .card {
 
 li:nth-child(3) .card {
   background-color: hsl(0, 0%, 100%);
-  color: hsl(217, 19%, 35%);
+  color: hsl(219, 29%, 14%);
 }
 
 li:nth-child(4) .card {
@@ -66,5 +100,5 @@ li:nth-child(4) .card {
 
 li:nth-child(5) .card {
   background-color: hsl(0, 0%, 100%);
-  color: hsl(217, 19%, 35%);
+  color: hsl(219, 29%, 14%);
 }/*# sourceMappingURL=styles.css.map */

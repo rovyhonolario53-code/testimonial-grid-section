@@ -49,14 +49,18 @@ img {
 .cards {
     list-style: none;
     margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    padding: 1.75rem;
+    padding: 2rem;
     border-radius: 12px;
+    box-shadow: 30px 40px 25px $grey-200;
 
     &__header {
         display: flex;
@@ -69,16 +73,54 @@ img {
         border-radius: 100%;
         
     }
+
+    &__text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    &__name {
+        font-weight: 500;
+    }
+
+    &__status {
+        font-weight: 300;
+        font-size: 0.7rem;
+    }
+
+    &__title {
+        font-weight: 500;
+        text-align: left;
+        font-size: 1.4rem;
+    }
+
+    &__quote {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        font-weight: 300;
+        text-align: left;
+
+        &::before {
+            content: "\201C  ";
+        }
+        &::after {
+            content: " \201D";
+        }
+
+    }
+
+
 }
 
 li:nth-child(1) .card { background-color: $purple-500; }
 li:nth-child(2) .card { background-color: $grey-500; }
 li:nth-child(3) .card { 
     background-color: $white; 
-    color: $grey-500; 
+    color: $dark-blue;
 }
 li:nth-child(4) .card { background-color: $dark-blue; }
 li:nth-child(5) .card {
     background-color: $white;
-    color: $grey-500;
+    color: $dark-blue;
 }
