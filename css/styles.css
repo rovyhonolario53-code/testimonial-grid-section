@@ -1,0 +1,70 @@
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  font-family: "Barlow semi condensed", serif;
+  place-items: center;
+  font-size: 13px;
+  background-color: hsl(214, 17%, 92%);
+  padding: 3.5rem 2rem;
+  color: hsl(214, 17%, 92%);
+}
+
+main {
+  width: 100%;
+}
+
+img {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.cards {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  border-radius: 12px;
+}
+.card__header {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.card__avatar {
+  border-radius: 100%;
+}
+
+li:nth-child(1) .card {
+  background-color: hsl(263, 55%, 52%);
+}
+
+li:nth-child(2) .card {
+  background-color: hsl(217, 19%, 35%);
+}
+
+li:nth-child(3) .card {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(217, 19%, 35%);
+}
+
+li:nth-child(4) .card {
+  background-color: hsl(219, 29%, 14%);
+}
+
+li:nth-child(5) .card {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(217, 19%, 35%);
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,84 @@
+$purple-50: hsl(260, 100%, 95%);
+$purple-300: hsl(264, 82%, 80%);
+$purple-500: hsl(263, 55%, 52%);
+
+$white: hsl(0, 0%, 100%);
+$grey-100: hsl(214, 17%, 92%);
+$grey-200: hsl(0, 0%, 81%);
+$grey-400: hsl(223, 58%, 5%);
+$grey-500: hsl(217, 19%, 35%);
+$dark-blue: hsl(219, 29%, 14%);
+$black: hsl(0, 0%, 7%);
+
+$font: "Barlow semi condensed", serif;
+
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    font-family: $font;
+    place-items: center;
+    font-size: 13px;
+    background-color: $grey-100;
+    padding: 3.5rem 2rem;
+    color: $grey-100;
+}
+
+main {
+    width: 100%;
+}
+
+img {
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+.cards {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.75rem;
+    border-radius: 12px;
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+    }
+
+    &__avatar {
+        border-radius: 100%;
+        
+    }
+}
+
+li:nth-child(1) .card { background-color: $purple-500; }
+li:nth-child(2) .card { background-color: $grey-500; }
+li:nth-child(3) .card { 
+    background-color: $white; 
+    color: $grey-500; 
+}
+li:nth-child(4) .card { background-color: $dark-blue; }
+li:nth-child(5) .card {
+    background-color: $white;
+    color: $grey-500;
+}
