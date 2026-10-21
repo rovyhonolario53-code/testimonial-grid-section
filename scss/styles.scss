@@ -10,7 +10,13 @@ $grey-500: hsl(217, 19%, 35%);
 $dark-blue: hsl(219, 29%, 14%);
 $black: hsl(0, 0%, 7%);
 
-$font: "Barlow semi condensed", serif;
+$font: "Barlow Semi Condensed", sans-serif;
+
+@mixin tablet {
+    @media (min-width: 1100px) {
+        @content;
+    }
+}
 
 *, ::before, ::after {
     padding: 0;
@@ -32,6 +38,18 @@ body {
 
 main {
     width: 100%;
+
+    @include tablet {
+        max-width: 1110px;
+        width: 100%;
+    }
+    
+}
+
+li {
+    @include tablet {
+        display: flex;
+    }
 }
 
 img {
@@ -40,18 +58,22 @@ img {
     height: 30px;
 }
 
-@mixin tablet {
-    @media (min-width: 768px) {
-        @content;
-    }
-}
-
 .cards {
     list-style: none;
     margin-top: 15px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    @include tablet {
+        display: grid;
+        gap: 1.5rem 2rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas: 
+        "card-1 card-1 card-2 card-5"
+        "card-3 card-4 card-4 card-5";
+    }
 }
 
 .card {
@@ -61,6 +83,10 @@ img {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 40px 30px 30px $grey-200;
+
+    @include tablet {
+        flex: 1;
+    }
 
     &__header {
         display: flex;
@@ -112,7 +138,12 @@ img {
 
 }
 
-li:nth-child(1) .card { background-color: $purple-500; }
+li:nth-child(1) .card { 
+    background-color: $purple-500;
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 85% 0px;
+}
 li:nth-child(2) .card { background-color: $grey-500; }
 li:nth-child(3) .card { 
     background-color: $white; 
@@ -126,3 +157,10 @@ li:nth-child(5) .card {
 
 li:nth-child(1) .card__avatar { border: 2px solid $purple-300; }
 li:nth-child(4) .card__avatar { border: 2px solid $purple-500; }
+
+
+li:nth-child(1) { grid-area: card-1}
+li:nth-child(2) { grid-area: card-2}
+li:nth-child(3) { grid-area: card-3}
+li:nth-child(4) { grid-area: card-4}
+li:nth-child(5) { grid-area: card-5}
